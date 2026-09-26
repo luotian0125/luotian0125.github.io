@@ -123,5 +123,18 @@
   async
   src="//gc.zgo.at/count.js">
 </script>
+<script>
+  fetch('https://tianluo.goatcounter.com/counter/TOTAL.json')
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById('visitor-count').textContent = data.count;
+    })
+    .catch(() => {
+      document.getElementById('visitor-count').textContent = '--';
+    });
+</script>
+<span>
+  👀 <span id="visitor-count">--</span> visitors
+</span>
 </body>
 </html>
