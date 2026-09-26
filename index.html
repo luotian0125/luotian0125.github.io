@@ -139,24 +139,5 @@
     bioButton.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); copyText(bio); } });
     document.getElementById('email-copy').addEventListener('click', e => { e.preventDefault(); copyText('luotian0125@gmail.com'); });
     window.addEventListener('scroll', () => document.getElementById('backToTop').classList.toggle('visible', window.scrollY > 300), {passive:true});
-</script>
-  <script
-  data-goatcounter="https://tianluo.goatcounter.com/count"
-  async
-  src="//gc.zgo.at/count.js">
-</script>
-<script>
-  fetch('https://tianluo.goatcounter.com/counter/TOTAL.json')
-    .then(response => response.json())
-    .then(data => {
-      document.getElementById('visitor-count').textContent = data.count;
-    })
-    .catch(() => {
-      document.getElementById('visitor-count').textContent = '--';
-    });
-</script>
-<span>
-  👀 <span id="visitor-count">--</span> visitors
-</span>
 </body>
 </html>
