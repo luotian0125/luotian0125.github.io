@@ -1,143 +1,1260 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="author" content="Tian Luo">
-  <meta name="description" content="Tian Luo is an undergraduate student at Sichuan University researching AI for Science, large language models, and scalable physical intelligence.">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta
+    name="author"
+    content="Tian Luo"
+  >
+
+  <meta
+    name="description"
+    content="Tian Luo is an undergraduate student at Sichuan University researching AI for Science, large language models, and scalable physical intelligence."
+  >
+
   <title>Tian Luo | Academic Homepage</title>
-  <link rel="stylesheet" href="stylesheet.css">
-  <link rel="icon" type="image/png" href="images/paper/TianLuo.png">
+
+  <link
+    rel="stylesheet"
+    href="stylesheet.css"
+  >
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="images/paper/TianLuo.png"
+  >
+
   <style>
-    body, * { cursor: url('images/icon/cursor.png'), auto; }
-    a, a * { cursor: url('images/icon/cursor-pointer.png'), pointer !important; }
-    .homepage-main { width: 100%; max-width: 800px; margin: 0 auto; border-spacing: 0; }
-    .contact-links a { display: inline-flex; align-items: center; gap: 5px; }
-    .contact-links svg { width: 17px; height: 17px; }
-    .news-list { margin: 8px 0 0; padding-left: 0; list-style: none; }
-    .news-entry { margin: 0 0 14px; line-height: 1.6; }
-    .news-date-badge { white-space: nowrap; margin-right: 8px; }
-    .publication-image { width: 190px; max-width: 100%; height: auto; border-radius: 4px; }
-    .paper-authors { line-height: 1.65; margin: 8px 0; }
-    .paper-authors sup { font-size: .7em; }
-    .paper-notes { color: #555; font-size: .86em; margin: 4px 0; }
-    .experience-logo { width: 100px; max-width: 100%; height: 86px; object-fit: contain; }
-    .experience-row td { padding-top: 17px; padding-bottom: 17px; }
-    .awards-list { margin: 8px 0; padding-left: 20px; line-height: 1.7; }
-    .toast-message { position: fixed; left: 50%; bottom: 30px; transform: translateX(-50%); padding: 8px 16px; border-radius: 20px; color: #333; background: #fff; box-shadow: 0 2px 12px #0002; opacity: 0; pointer-events: none; transition: opacity .2s; }
-    .toast-message.show { opacity: 1; }
-    @media (max-width: 600px) {
-      .about-row { display: flex; flex-direction: column-reverse; }
-      .about-copy, .about-portrait { display: block; box-sizing: border-box; width: 100% !important; max-width: 100% !important; }
-      .about-portrait { text-align: center; }
-      .about-portrait img { max-width: 220px !important; }
-      .publication-row td { display: block; box-sizing: border-box; width: 100% !important; }
-      .publication-row td:first-child { text-align: center; padding-bottom: 0 !important; }
-      .contact-links { line-height: 2; }
+
+    body,
+    * {
+      cursor: url('images/icon/cursor.png'), auto;
     }
+
+    a,
+    a * {
+      cursor: url('images/icon/cursor-pointer.png'), pointer !important;
+    }
+
+    .homepage-main {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      border-spacing: 0;
+    }
+
+    /* =========================
+       About / Contact
+       ========================= */
+
+    .contact-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .contact-links svg {
+      width: 17px;
+      height: 17px;
+    }
+
+    /* =========================
+       News
+       ========================= */
+
+    .news-list {
+      margin: 8px 0 0;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .news-entry {
+      margin: 0 0 14px;
+      line-height: 1.6;
+    }
+
+    .news-date-badge {
+      white-space: nowrap;
+      margin-right: 8px;
+    }
+
+    /* =========================
+       Publications
+       ========================= */
+
+    .publication-image {
+      width: 190px;
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+
+    .paper-authors {
+      line-height: 1.65;
+      margin: 8px 0;
+    }
+
+    .paper-authors sup {
+      font-size: 0.7em;
+    }
+
+    .paper-notes {
+      color: #555;
+      font-size: 0.86em;
+      margin: 4px 0;
+    }
+
+    /* =========================
+       Experience
+       ========================= */
+
+    .experience-logo {
+      width: 100px;
+      max-width: 100%;
+      height: 86px;
+      object-fit: contain;
+    }
+
+    .experience-row td {
+      padding-top: 17px;
+      padding-bottom: 17px;
+    }
+
+    /* =========================
+       Awards
+       ========================= */
+
+    .awards-list {
+      margin: 8px 0;
+      padding-left: 20px;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       Footer
+       ========================= */
+
+    .mountain-footnote > span {
+      display: block;
+    }
+
+    .mountain-visitors {
+      margin-top: 4px;
+    }
+
+    /* =========================
+       Toast
+       ========================= */
+
+    .toast-message {
+      position: fixed;
+      left: 50%;
+      bottom: 30px;
+
+      transform: translateX(-50%);
+
+      padding: 8px 16px;
+
+      border-radius: 20px;
+
+      color: #333;
+      background: #fff;
+
+      box-shadow: 0 2px 12px #0002;
+
+      opacity: 0;
+      pointer-events: none;
+
+      transition: opacity 0.2s;
+    }
+
+    .toast-message.show {
+      opacity: 1;
+    }
+
+    /* =========================
+       Mobile
+       ========================= */
+
+    @media (max-width: 600px) {
+
+      .about-row {
+        display: flex;
+        flex-direction: column-reverse;
+      }
+
+      .about-copy,
+      .about-portrait {
+        display: block;
+        box-sizing: border-box;
+
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+      .about-portrait {
+        text-align: center;
+      }
+
+      .about-portrait img {
+        max-width: 220px !important;
+      }
+
+      .publication-row td {
+        display: block;
+        box-sizing: border-box;
+
+        width: 100% !important;
+      }
+
+      .publication-row td:first-child {
+        text-align: center;
+        padding-bottom: 0 !important;
+      }
+
+      .contact-links {
+        line-height: 2;
+      }
+    }
+
   </style>
 </head>
+
+
 <body>
-  <table class="homepage-main"><tbody><tr><td>
-    <table id="about" class="page-section" style="width:100%;border-spacing:0;"><tbody>
-      <tr class="about-row">
-        <td class="about-copy" style="padding:2.5%;width:68%;vertical-align:middle">
-          <p style="text-align:center"><name>Tian Luo &nbsp;|&nbsp; 罗天 <span id="astronaut-btn" role="button" tabindex="0" title="Copy bio" aria-label="Copy bio" style="cursor:pointer">🧑‍🚀</span></name></p>
-          <p>I am an undergraduate student at <a href="https://www.scu.edu.cn/" target="_blank" rel="noopener noreferrer"><strong>Sichuan University</strong></a>, pursuing dual bachelor's degrees in <strong>Mathematics</strong> and <strong>Artificial Intelligence</strong>. My research interests lie in <strong>AI for Science (AI4S)</strong>, <strong>Large Language Models (LLMs)</strong>, and <strong>scalable physical intelligence</strong>.</p>
-          <p>I am currently a research intern at the <a href="https://air.tsinghua.edu.cn/" target="_blank" rel="noopener noreferrer"><strong>Institute for AI Industry Research (AIR), Tsinghua University</strong></a>, advised by Assistant Professor <strong>Kun Li</strong>.</p>
-          <div style="width:100%;height:1px;background:linear-gradient(to right,transparent,#ccc 20%,#ccc 80%,transparent);margin:10px 0;"></div>
-          <p class="contact-links"><a id="email-copy" href="mailto:luotian0125@gmail.com" title="Click to copy email"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email: <span class="contact-sub">luotian0125@gmail.com</span></a></p>
+
+
+  <!-- =========================================================
+       Main Content
+       ========================================================= -->
+
+  <table class="homepage-main">
+    <tbody>
+      <tr>
+        <td>
+
+
+          <!-- =====================================================
+               About
+               ===================================================== -->
+
+          <table
+            id="about"
+            class="page-section"
+            style="width:100%; border-spacing:0;"
+          >
+            <tbody>
+
+              <tr class="about-row">
+
+                <td
+                  class="about-copy"
+                  style="padding:2.5%; width:68%; vertical-align:middle;"
+                >
+
+                  <p style="text-align:center">
+
+                    <name>
+
+                      Tian Luo
+                      &nbsp;|&nbsp;
+                      罗天
+
+                      <span
+                        id="astronaut-btn"
+                        role="button"
+                        tabindex="0"
+                        title="Copy bio"
+                        aria-label="Copy bio"
+                        style="cursor:pointer"
+                      >
+                        🧑‍🚀
+                      </span>
+
+                    </name>
+
+                  </p>
+
+
+                  <p>
+
+                    I am an undergraduate student at
+
+                    <a
+                      href="https://www.scu.edu.cn/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <strong>Sichuan University</strong>
+                    </a>,
+
+                    pursuing dual bachelor's degrees in
+
+                    <strong>Mathematics</strong>
+
+                    and
+
+                    <strong>Artificial Intelligence</strong>.
+
+                    My research interests lie in
+
+                    <strong>AI for Science (AI4S)</strong>,
+
+                    <strong>Large Language Models (LLMs)</strong>,
+
+                    and
+
+                    <strong>scalable physical intelligence</strong>.
+
+                  </p>
+
+
+                  <p>
+
+                    I am currently a research intern at the
+
+                    <a
+                      href="https://air.tsinghua.edu.cn/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <strong>
+                        Institute for AI Industry Research (AIR),
+                        Tsinghua University
+                      </strong>
+                    </a>,
+
+                    advised by Assistant Professor
+                    <strong>Kun Li</strong>.
+
+                  </p>
+
+
+                  <div
+                    style="
+                      width:100%;
+                      height:1px;
+                      background:
+                        linear-gradient(
+                          to right,
+                          transparent,
+                          #ccc 20%,
+                          #ccc 80%,
+                          transparent
+                        );
+                      margin:10px 0;
+                    "
+                  >
+                  </div>
+
+
+                  <!-- Contact -->
+
+                  <p class="contact-links">
+
+                    <a
+                      id="email-copy"
+                      href="mailto:luotian0125@gmail.com"
+                      title="Click to copy email"
+                    >
+
+                      <svg
+                        aria-hidden="true"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+
+                        <rect
+                          x="3"
+                          y="5"
+                          width="18"
+                          height="14"
+                          rx="2"
+                        />
+
+                        <path d="m3 7 9 6 9-6"/>
+
+                      </svg>
+
+                      Email:
+                      <span class="contact-sub">
+                        luotian0125@gmail.com
+                      </span>
+
+                    </a>
+
+                  </p>
+
+                </td>
+
+
+                <!-- Portrait -->
+
+                <td
+                  class="about-portrait"
+                  style="
+                    padding:2.5%;
+                    width:40%;
+                    max-width:40%;
+                  "
+                >
+
+                  <img
+                    src="images/paper/TianLuo.png"
+                    alt="Tian Luo"
+                    style="
+                      width:85%;
+                      max-width:85%;
+                      border-radius:8px;
+                    "
+                  >
+
+                </td>
+
+              </tr>
+
+            </tbody>
+          </table>
+
+
+
+          <!-- =====================================================
+               News
+               ===================================================== -->
+
+          <section
+            id="news"
+            class="page-section"
+            style="padding:10px 2.5%;"
+          >
+
+            <heading>News</heading>
+
+
+            <ul class="news-list">
+
+
+              <li class="news-entry">
+
+                <span class="news-date-badge">
+                  Sep. 25, 2026
+                </span>
+
+                Our paper
+
+                <span class="news-highlight">
+                  AtomWorld-Mem
+                </span>
+
+                was accepted to
+
+                <strong>
+                  <em>NeurIPS 2026</em>
+                </strong>!
+
+                It is my first research paper and was accepted on my
+                first submission.
+
+                Special thanks to
+
+                <strong>
+                  <em>Kun</em>
+                </strong>,
+
+                who introduced me to research and has had a profound
+                influence on my journey.
+
+              </li>
+
+
+
+              <li class="news-entry">
+
+                <span class="news-date-badge">
+                  Sep. 20, 2026
+                </span>
+
+                I received the
+
+                <strong>
+                  <em>
+                    <span class="news-highlight">
+                      National Scholarship
+                    </span>
+                  </em>
+                </strong>
+
+                for the second consecutive year!
+
+                I am grateful for my hard work and for the support of
+                my family, friends, teachers, and everyone who has
+                helped me grow.
+
+              </li>
+
+
+
+              <li class="news-entry">
+
+                <span class="news-date-badge">
+                  Sep. 28, 2025
+                </span>
+
+                I received the
+
+                <strong>
+                  <em>
+                    <span class="news-highlight">
+                      National Scholarship and Comprehensive
+                      First-Class Scholarship of Sichuan University
+                    </span>
+                  </em>
+                </strong>
+
+                as the sole recipient in my major.
+
+              </li>
+
+
+            </ul>
+
+          </section>
+
+
+
+          <!-- =====================================================
+               Publications
+               ===================================================== -->
+
+          <section
+            id="publications"
+            class="page-section"
+            style="padding:10px 2.5%;"
+          >
+
+            <heading>Publications</heading>
+
+
+            <table
+              class="publications-table"
+              style="
+                width:100%;
+                border-spacing:0 16px;
+              "
+            >
+              <tbody>
+
+
+                <!-- AtomWorld-Mem -->
+
+                <tr
+                  class="publication-row"
+                  data-tags="ai4science,world-model"
+                >
+
+
+                  <!-- Paper Image -->
+
+                  <td
+                    style="
+                      padding:20px;
+                      width:30%;
+                      vertical-align:middle;
+                    "
+                  >
+
+                    <img
+                      class="publication-image"
+                      src="images/experience/AtomWorld-Mem.png"
+                      alt="AtomWorld-Mem project illustration"
+                    >
+
+                  </td>
+
+
+
+                  <!-- Paper Information -->
+
+                  <td
+                    style="
+                      padding:20px;
+                      width:70%;
+                      vertical-align:middle;
+                    "
+                  >
+
+
+                    <papertitle>
+                      AtomWorld-Mem:
+                      Memory-Restored World States for
+                      Long-Horizon Atomistic Evolution
+                    </papertitle>
+
+
+                    <p class="paper-authors">
+
+                      <strong>Tian Luo</strong><sup>†</sup>,
+
+                      Ruge Zhang<sup>†</sup>,
+
+                      Haozhi Han,
+
+                      Yifeng Chen,
+
+                      Yunquan Zhang,
+
+                      Ting Cao,
+
+                      Yunxin Liu,
+
+                      Kun Li<sup>‡</sup>
+
+                    </p>
+
+
+                    <p class="paper-notes">
+
+                      † Equal contribution.
+                      ‡ Corresponding author.
+
+                    </p>
+
+
+                    <em>
+                      <strong>NeurIPS 2026</strong>
+                    </em>
+
+
+                    <p>
+
+                      AtomWorld-Mem restores the hidden evolutionary
+                      state missing from instantaneous crystal
+                      snapshots, enabling physically grounded and
+                      transferable long-horizon atomistic evolution.
+
+                    </p>
+
+
+                  </td>
+
+                </tr>
+
+
+              </tbody>
+            </table>
+
+          </section>
+
+
+
+          <!-- =====================================================
+               Experience
+               ===================================================== -->
+
+          <section
+            id="experience"
+            class="page-section"
+            style="padding:10px 2.5%;"
+          >
+
+            <heading>Experience</heading>
+
+
+            <table
+              style="
+                width:100%;
+                border-spacing:0;
+              "
+            >
+
+              <tbody>
+
+
+                <!-- Sichuan University -->
+
+                <tr class="experience-row">
+
+
+                  <td
+                    style="
+                      padding-left:20px;
+                      padding-right:20px;
+                      width:20%;
+                      vertical-align:middle;
+                    "
+                  >
+
+                    <img
+                      class="experience-logo"
+                      src="images/paper/scu.svg"
+                      alt="Sichuan University logo"
+                    >
+
+                  </td>
+
+
+                  <td
+                    style="
+                      width:80%;
+                      vertical-align:middle;
+                    "
+                  >
+
+                    <strong>
+
+                      <a
+                        href="https://www.scu.edu.cn/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Sichuan University
+                      </a>
+
+                    </strong>
+
+
+                    <br>
+
+                    2024–2028 (Expected)
+
+
+                    <br>
+
+                    <strong>
+                      Undergraduate Student
+                    </strong>
+
+
+                    <br>
+
+                    Dual bachelor's degrees in
+                    Mathematics and Artificial Intelligence
+
+                  </td>
+
+
+                </tr>
+
+
+
+                <!-- Tsinghua AIR -->
+
+                <tr class="experience-row">
+
+
+                  <td
+                    style="
+                      padding-left:20px;
+                      padding-right:20px;
+                      width:20%;
+                      vertical-align:middle;
+                    "
+                  >
+
+                    <img
+                      class="experience-logo"
+                      src="images/paper/air.svg"
+                      alt="Tsinghua AIR logo"
+                    >
+
+                  </td>
+
+
+                  <td
+                    style="
+                      width:80%;
+                      vertical-align:middle;
+                    "
+                  >
+
+                    <strong>
+
+                      <a
+                        href="https://air.tsinghua.edu.cn/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Institute for AI Industry Research (AIR),
+                        Tsinghua University
+                      </a>
+
+                    </strong>
+
+
+                    <br>
+
+                    Feb. 2026 – Present
+
+
+                    <br>
+
+                    <strong>
+                      Research Intern
+                    </strong>
+
+
+                    <br>
+
+                    Research Advisor:
+                    Assistant Professor
+                    <strong>Kun Li</strong>
+
+                  </td>
+
+
+                </tr>
+
+
+              </tbody>
+
+            </table>
+
+          </section>
+
+
+
+          <!-- =====================================================
+               Projects section removed
+               ===================================================== -->
+
+
+
+          <!-- =====================================================
+               Service and Teaching
+
+               Temporarily hidden until content is available.
+
+          <section
+            id="service"
+            class="page-section"
+            style="padding:10px 2.5%;"
+          >
+
+            <heading>Service and Teaching</heading>
+
+          </section>
+
+               ===================================================== -->
+
+
+
+          <!-- =====================================================
+               Awards and Honors
+               ===================================================== -->
+
+          <section
+            id="awards"
+            class="page-section"
+            style="padding:10px 2.5%;"
+          >
+
+            <heading>Awards and Honors</heading>
+
+
+            <ul class="awards-list">
+
+              <li>
+                2025, 2026 — National Scholarship
+              </li>
+
+              <li>
+                2025 — Comprehensive First-Class Scholarship,
+                Sichuan University
+              </li>
+
+            </ul>
+
+          </section>
+
+
         </td>
-        <td class="about-portrait" style="padding:2.5%;width:40%;max-width:40%"><img src="images/paper/TianLuo.png" alt="Tian Luo" style="width:85%;max-width:85%;border-radius:8px;"></td>
       </tr>
-    </tbody></table>
+    </tbody>
+  </table>
 
-    <section id="news" class="page-section" style="padding:10px 2.5%;">
-      <heading>News</heading>
-      <ul class="news-list">
-        <li class="news-entry"><span class="news-date-badge">Sep. 25, 2026</span> Our paper <span class="news-highlight">AtomWorld-Mem</span> was accepted to <strong><em>NeurIPS 2026</em></strong>! It is my first research paper and was accepted on my first submission. Special thanks to <strong><em>Kun</em></strong>, who introduced me to research and has had a profound influence on my journey.</li>
-        <li class="news-entry"><span class="news-date-badge">Sep. 20, 2026</span> I received the <strong><em><span class="news-highlight">National Scholarship</span></em></strong> for the second consecutive year! I am grateful for my hard work and for the support of my family, friends, teachers, and everyone who has helped me grow.</li>
-        <li class="news-entry"><span class="news-date-badge">Sep. 28, 2025</span> I received the <strong><em><span class="news-highlight">National Scholarship and Comprehensive First-Class Scholarship of Sichuan University</span></em></strong> as the sole recipient in my major.</li>
-      </ul>
-    </section>
 
-    <section id="publications" class="page-section" style="padding:10px 2.5%;">
-      <heading>Publications</heading>
-      <table class="publications-table" style="width:100%;border-spacing:0 16px;"><tbody>
-        <tr class="publication-row" data-tags="ai4science,world-model">
-          <td style="padding:20px;width:30%;vertical-align:middle"><img class="publication-image" src="images/experience/AtomWorld-Mem.png" alt="AtomWorld-Mem project illustration"></td>
-          <td style="padding:20px;width:70%;vertical-align:middle">
-            <papertitle>AtomWorld-Mem: Memory-Restored World States for Long-Horizon Atomistic Evolution</papertitle>
-            <p class="paper-authors"><strong>Tian Luo</strong><sup>†</sup>, Ruge Zhang<sup>†</sup>, Haozhi Han, Yifeng Chen, Yunquan Zhang, Ting Cao, Yunxin Liu, Kun Li<sup>‡</sup></p>
-            <p class="paper-notes">† Equal contribution. ‡ Corresponding author.</p>
-            <em><strong>NeurIPS 2026</strong></em>
-            <p>AtomWorld-Mem restores the hidden evolutionary state missing from instantaneous crystal snapshots, enabling physically grounded and transferable long-horizon atomistic evolution.</p>
-          </td>
-        </tr>
-      </tbody></table>
-    </section>
 
-    <section id="experience" class="page-section" style="padding:10px 2.5%;">
-      <heading>Experience</heading>
-      <table style="width:100%;border-spacing:0;"><tbody>
-        <tr class="experience-row"><td style="padding-left:20px;padding-right:20px;width:20%;vertical-align:middle"><img class="experience-logo" src="images/paper/scu.svg" alt="Sichuan University logo"></td><td style="width:80%;vertical-align:middle"><strong><a href="https://www.scu.edu.cn/" target="_blank" rel="noopener noreferrer">Sichuan University</a></strong><br>2024–2028 (expected)<br><strong>Undergraduate Student</strong><br>Dual bachelor's degrees in Mathematics and Artificial Intelligence</td></tr>
-        <tr class="experience-row"><td style="padding-left:20px;padding-right:20px;width:20%;vertical-align:middle"><img class="experience-logo" src="images/paper/air1.svg" alt="Tsinghua AIR logo"></td><td style="width:80%;vertical-align:middle"><strong><a href="https://air.tsinghua.edu.cn/" target="_blank" rel="noopener noreferrer">Institute for AI Industry Research (AIR), Tsinghua University</a></strong><br>Feb. 2026 – Present<br><strong>Research Intern</strong><br>Research Advisor: Assistant Professor Kun Li</td></tr>
-      </tbody></table>
-    </section>
+  <!-- =========================================================
+       Footer
+       ========================================================= -->
 
-    <!-- Service and Teaching section is commented out until there is verified content to add. -->
+  <section
+    class="mountain-footer"
+    aria-label="Footer landscape"
+  >
 
-    <section id="awards" class="page-section" style="padding:10px 2.5%;">
-      <heading>Awards and Honors</heading>
-      <ul class="awards-list"><li>2025，2026 — National Scholarship </li><li>2025 — Comprehensive First-Class Scholarship, Sichuan University </li></ul>
-    </section>
-  </td></tr></tbody></table>
 
-  <section class="mountain-footer" aria-label="Footer landscape"><div class="mountain-stage">
-    <picture><source type="image/webp" srcset="images/experience/background-960.webp 960w, images/experience/background-1440.webp 1440w, images/experience/background-1920.webp 1920w" sizes="100vw"><img class="mountain-img" src="images/experience/background.jpeg" alt="Snowy mountain landscape" loading="lazy" decoding="async" onerror="this.style.display='none';this.closest('picture').nextElementSibling.style.display='block';"></picture>
-    <div class="mountain-fallback" style="display:none;"></div>
-    <div class="mountain-content">
-      <h2>Keep Exploring</h2>
-      <p class="mountain-sub">Do what matters, even when it's hard.</p>
-    
-      <a href="mailto:luotian0125@gmail.com" class="mountain-cta">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M8 5v14l11-7z"/>
-        </svg>
-        <span>Get in Touch</span>
-      </a>
-    
-      <p class="mountain-footnote">
-        <span>Tian Luo | 罗天</span>
-    
-        <span class="mountain-updated">
-          Last updated: September 2026.
-        </span>
-    
-        <span class="mountain-visitors">
-          👀 <span id="visitor-count">--</span> visitors
-        </span>
-      </p>
+    <div class="mountain-stage">
+
+
+      <picture>
+
+        <source
+          type="image/webp"
+          srcset="
+            images/experience/background-960.webp 960w,
+            images/experience/background-1440.webp 1440w,
+            images/experience/background-1920.webp 1920w
+          "
+          sizes="100vw"
+        >
+
+
+        <img
+          class="mountain-img"
+          src="images/experience/background.jpeg"
+          alt="Planet landscape"
+          loading="lazy"
+          decoding="async"
+          onerror="
+            this.style.display='none';
+            this.closest('picture').nextElementSibling.style.display='block';
+          "
+        >
+
+      </picture>
+
+
+      <div
+        class="mountain-fallback"
+        style="display:none;"
+      >
+      </div>
+
+
+
+      <div class="mountain-content">
+
+
+        <h2>
+          Keep Exploring
+        </h2>
+
+
+        <p class="mountain-sub">
+          Do what matters, even when it's hard.
+        </p>
+
+
+
+        <a
+          href="mailto:luotian0125@gmail.com"
+          class="mountain-cta"
+        >
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+
+          <span>
+            Get in Touch
+          </span>
+
+        </a>
+
+
+
+        <p class="mountain-footnote">
+
+
+          <span>
+            Tian Luo | 罗天
+          </span>
+
+
+          <span class="mountain-updated">
+            Last updated: September 2026.
+          </span>
+
+
+          <span class="mountain-visitors">
+            👀
+            <span id="visitor-count">--</span>
+            visitors
+          </span>
+
+
+        </p>
+
+
+      </div>
+
     </div>
-  </div></section>
 
-  <button id="backToTop" type="button" title="Back to top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg></button>
-  <div id="toast" class="toast-message" role="status">Copied</div>
+  </section>
+
+
+
+  <!-- =========================================================
+       Back to Top
+       ========================================================= -->
+
+  <button
+    id="backToTop"
+    type="button"
+    title="Back to top"
+    aria-label="Back to top"
+    onclick="window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })"
+  >
+
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+
+  </button>
+
+
+
+  <!-- =========================================================
+       Copy Toast
+       ========================================================= -->
+
+  <div
+    id="toast"
+    class="toast-message"
+    role="status"
+  >
+    Copied
+  </div>
+
+
+
+  <!-- =========================================================
+       Homepage JS
+       ========================================================= -->
+
   <script>
-    const bio = "Tian Luo is an undergraduate student at Sichuan University, pursuing dual bachelor's degrees in Mathematics and Artificial Intelligence. His research interests lie in AI for Science (AI4S), Large Language Models (LLMs), and scalable physical intelligence. He is currently a research intern at the Institute for AI Industry Research (AIR), Tsinghua University, advised by Assistant Professor Kun Li.";
-    const toast = document.getElementById('toast');
+
+    const bio =
+      "Tian Luo is an undergraduate student at Sichuan University, " +
+      "pursuing dual bachelor's degrees in Mathematics and Artificial Intelligence. " +
+      "His research interests lie in AI for Science (AI4S), " +
+      "Large Language Models (LLMs), and scalable physical intelligence. " +
+      "He is currently a research intern at the Institute for AI Industry Research " +
+      "(AIR), Tsinghua University, advised by Assistant Professor Kun Li.";
+
+
+    const toast =
+      document.getElementById('toast');
+
+
     async function copyText(value) {
-      try { await navigator.clipboard.writeText(value); }
-      catch (_) {
-        const field = document.createElement('textarea'); field.value = value;
-        document.body.appendChild(field); field.select(); document.execCommand('copy'); field.remove();
+
+      try {
+
+        await navigator.clipboard.writeText(value);
+
+      } catch (_) {
+
+        const field =
+          document.createElement('textarea');
+
+        field.value = value;
+
+        document.body.appendChild(field);
+
+        field.select();
+
+        document.execCommand('copy');
+
+        field.remove();
+
       }
-      toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), 1800);
+
+
+      toast.classList.add('show');
+
+      setTimeout(
+        () => toast.classList.remove('show'),
+        1800
+      );
+
     }
-    const bioButton = document.getElementById('astronaut-btn');
-    bioButton.addEventListener('click', () => copyText(bio));
-    bioButton.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); copyText(bio); } });
-    document.getElementById('email-copy').addEventListener('click', e => { e.preventDefault(); copyText('luotian0125@gmail.com'); });
-    window.addEventListener('scroll', () => document.getElementById('backToTop').classList.toggle('visible', window.scrollY > 300), {passive:true});
+
+
+
+    const bioButton =
+      document.getElementById('astronaut-btn');
+
+
+    bioButton.addEventListener(
+      'click',
+      () => copyText(bio)
+    );
+
+
+    bioButton.addEventListener(
+      'keydown',
+      event => {
+
+        if (
+          event.key === 'Enter' ||
+          event.key === ' '
+        ) {
+
+          event.preventDefault();
+
+          copyText(bio);
+
+        }
+
+      }
+    );
+
+
+
+    document
+      .getElementById('email-copy')
+      .addEventListener(
+        'click',
+        event => {
+
+          event.preventDefault();
+
+          copyText(
+            'luotian0125@gmail.com'
+          );
+
+        }
+      );
+
+
+
+    window.addEventListener(
+      'scroll',
+      () => {
+
+        document
+          .getElementById('backToTop')
+          .classList.toggle(
+            'visible',
+            window.scrollY > 300
+          );
+
+      },
+      {
+        passive: true
+      }
+    );
+
+  </script>
+
+
+
+  <!-- =========================================================
+       GoatCounter Analytics
+       ========================================================= -->
+
+  <script
+    data-goatcounter="https://tianluo.goatcounter.com/count"
+    async
+    src="https://gc.zgo.at/count.js"
+  >
+  </script>
+
+
+
+  <!-- =========================================================
+       GoatCounter Visitor Counter
+       ========================================================= -->
+
+  <script>
+
+    function loadVisitorCount() {
+
+      fetch(
+        'https://tianluo.goatcounter.com/counter/TOTAL.json',
+        {
+          cache: 'no-store'
+        }
+      )
+
+        .then(response => {
+
+          if (!response.ok) {
+
+            throw new Error(
+              'Failed to load visitor count'
+            );
+
+          }
+
+          return response.json();
+
+        })
+
+        .then(data => {
+
+          const counter =
+            document.getElementById(
+              'visitor-count'
+            );
+
+
+          if (counter) {
+
+            counter.textContent =
+              data.count ?? '--';
+
+          }
+
+        })
+
+        .catch(error => {
+
+          console.error(
+            'Visitor counter error:',
+            error
+          );
+
+
+          const counter =
+            document.getElementById(
+              'visitor-count'
+            );
+
+
+          if (counter) {
+
+            counter.textContent = '--';
+
+          }
+
+        });
+
+    }
+
+
+    loadVisitorCount();
+
+  </script>
+
+
 </body>
+
 </html>
