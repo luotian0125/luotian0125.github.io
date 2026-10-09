@@ -327,6 +327,7 @@
 
 
 
+
           <!-- Publications -->
           <section id="publications" class="page-section" style="padding:10px 2.5%;">
             <heading>Publications</heading>
@@ -337,9 +338,13 @@
                 <!-- Publication 1: AtomWorld-Mem -->
                 <tr class="publication-row" data-tags="ai4science,world-model">
                   <td style="padding:20px; width:30%; vertical-align:middle;">
-                    <img class="publication-image"
-                         src="images/experience/AtomWorld-Mem.png"
-                         alt="AtomWorld-Mem project illustration">
+                    <img
+                      class="publication-image"
+                      src="images/experience/AtomWorld-Mem.png"
+                      alt="AtomWorld-Mem project illustration"
+                      decoding="async"
+                      style="display:block; max-width:100%; height:auto; object-fit:contain;"
+                    >
                   </td>
           
                   <td style="padding:20px; width:70%; vertical-align:middle;">
@@ -378,9 +383,33 @@
                 <!-- Publication 2: AtomWorld -->
                 <tr class="publication-row" data-tags="ai4science,world-model">
                   <td style="padding:20px; width:30%; vertical-align:middle;">
-                    <img class="publication-image"
-                         src="images/experience/AtomWorld.png"
-                         alt="AtomWorld project illustration">
+                    <a href="images/experience/Overview-lossless.webp"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       style="display:block; text-decoration:none;">
+          
+                      <picture>
+                        <source
+                          type="image/webp"
+                          srcset="
+                            images/experience/Overview-1200.webp 1200w,
+                            images/experience/Overview-lossless.webp 2048w
+                          "
+                          sizes="(max-width:768px) 90vw, 30vw"
+                        >
+          
+                        <img
+                          class="publication-image"
+                          src="images/experience/AtomWorld.png"
+                          alt="AtomWorld project illustration"
+                          width="2048"
+                          height="1611"
+                          loading="lazy"
+                          decoding="async"
+                          style="display:block; width:100%; height:auto; object-fit:contain;"
+                        >
+                      </picture>
+                    </a>
                   </td>
           
                   <td style="padding:20px; width:70%; vertical-align:middle;">
@@ -410,6 +439,7 @@
               </tbody>
             </table>
           </section>
+
 
 
           <!-- Experience -->
