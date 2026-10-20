@@ -262,6 +262,20 @@
     @media(max-width:480px) { .site-nav { padding:4px; margin-top:8px; } .site-nav a { padding:6px 8px; font-size:11px; } .contact-links { gap:6px; } }
     #news .news-copy strong { font-weight:600; font-style:italic; color:#806b3e; text-decoration-line:underline; text-decoration-color:rgba(174,139,61,.65); text-decoration-thickness:1px; text-underline-offset:3px; text-decoration-skip-ink:auto; }
     #news .news-copy .news-person { font-style:italic; font-weight:400; color:inherit; text-decoration:none; border:0; background:none; }
+    #news .news-archive { margin:0 0 12px; }
+    #news .news-archive summary { display:flex; align-items:center; justify-content:center; gap:8px; padding:8px 0; color:#957333; font:inherit; font-size:12px; list-style:none; cursor:pointer; border-radius:6px; }
+    #news .news-archive summary::-webkit-details-marker { display:none; }
+    #news .news-archive summary::before, #news .news-archive summary::after { content:""; height:1px; flex:1; background:linear-gradient(to right,transparent,#e7d9b6); }
+    #news .news-archive summary::after { transform:rotate(180deg); }
+    #news .news-archive summary:hover { color:#6f501a; background:#fffdf7; }
+    #news .news-archive summary:focus-visible { outline:2px solid #bd8e18; outline-offset:3px; }
+    #news .news-archive summary svg { width:14px; height:14px; transition:transform .2s ease; }
+    #news .news-older-count { color:#948b77; font-size:10px; }
+    #news .news-less-label, #news .news-archive[open] .news-more-label, #news .news-archive[open] .news-older-count { display:none; }
+    #news .news-archive[open] .news-less-label { display:inline; }
+    #news .news-archive[open] summary svg { transform:rotate(180deg); }
+    #news .news-archive-list { margin-top:8px; }
+    @media(prefers-reduced-motion:reduce) { #news .news-archive summary svg { transition:none; } }
 </style>
 </head>
 
@@ -408,11 +422,15 @@
       <time class="news-date-badge" datetime="2026-09-20">Sep. 20, 2026</time>
       <div class="news-copy">I received the <strong>National Scholarship</strong> for the second consecutive year! I am grateful for my hard work and for the support of my family, friends, teachers, and everyone who has helped me grow.</div>
     </li>
-    <li class="news-entry">
+    
+  </ul>
+  <details class="news-archive">
+    <summary><span class="news-more-label">More news</span><span class="news-less-label">Less news</span><span class="news-older-count">1 older update</span><svg aria-hidden="true" viewBox="0 0 16 16" fill="none"><path d="m4 6 4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+    <ul class="news-list news-archive-list"><li class="news-entry">
       <time class="news-date-badge" datetime="2025-09-28">Sep. 28, 2025</time>
       <div class="news-copy">I received the <strong>National Scholarship and Comprehensive First-Class Scholarship of Sichuan University</strong> as the sole recipient in my major.</div>
     </li>
-  </ul>
+</ul></details>
 </section>
 
 
