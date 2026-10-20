@@ -193,29 +193,27 @@
         line-height: 1.6;
       }
     }
-      /* Compact navigation, aligned with the academic homepage. */
-    html { scroll-behavior: smooth; scroll-padding-top: 112px; }
-    .site-nav { position: sticky; top: 10px; z-index: 100; width: calc(100% - 24px); max-width: 760px; box-sizing: border-box; margin: 14px auto 12px; padding: 7px; border: 1px solid rgba(39,70,100,.12); border-radius: 18px; background: rgba(255,255,255,.95); box-shadow: 0 4px 20px rgba(35,55,80,.06); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
-    .site-nav-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 3px; }
-    .site-nav a { display: block; padding: 9px 13px; border-radius: 11px; color: #526173; font: inherit; font-size: 13px; font-weight: 500; line-height: 1.3; text-decoration: none; transition: color .18s, background .18s; }
-    .site-nav a:hover, .site-nav a[aria-current="location"] { color: #1772d0; background: #edf4fc; }
-    .site-nav a:focus-visible { outline: 2px solid #1772d0; outline-offset: 2px; }
-    @media (max-width: 480px) { .site-nav { top: 6px; padding: 5px; border-radius: 14px; } .site-nav a { padding: 8px 10px; font-size: 12px; } }
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .site-nav a { transition: none; } }
-  </style>
+      html { scroll-behavior:smooth; }
+    .site-nav { position:sticky; top:10px; z-index:100; width:calc(100% - 24px); max-width:760px; box-sizing:border-box; margin:14px auto 12px; padding:7px; border:1px solid #ecdfb5; border-radius:18px; background:rgba(255,253,245,.96); box-shadow:0 4px 20px rgba(120,92,25,.07); backdrop-filter:blur(14px); }
+    .site-nav-links { display:flex; justify-content:center; flex-wrap:wrap; gap:3px; }
+    .site-nav a { display:block; padding:9px 13px; border-radius:11px; color:#6b6045; font:inherit; font-size:13px; font-weight:500; line-height:1.3; text-decoration:none; transition:background .18s,color .18s; }
+    .site-nav a:hover { background:#fff3cc; color:#755400; }
+    .site-nav a[aria-current="location"] { background:#f7d774; color:#5b4200; }
+    .site-nav a:focus-visible { outline:2px solid #bd8e18; outline-offset:2px; }
+    @media(max-width:480px) { .site-nav { top:6px; padding:5px; border-radius:14px; } .site-nav a { padding:8px 10px; font-size:12px; } }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .site-nav a { transition:none; } }
+</style>
 </head>
 
 <body>
-  <nav class="site-nav" aria-label="Main navigation">
-    <div class="site-nav-links">
-      <a href="#about" aria-current="location">About</a>
-      <a href="#news">News</a>
-      <a href="#publications">Publications</a>
-      <a href="#education">Education</a>
-      <a href="#experience">Experience</a>
-      <a href="#awards">Awards</a>
-    </div>
-  </nav>
+  <nav class="site-nav" aria-label="Main navigation"><div class="site-nav-links">
+    <a href="#about" aria-current="location">About</a>
+    <a href="#news">News</a>
+    <a href="#publications">Publications</a>
+    <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
+    <a href="#awards">Awards</a>
+  </div></nav>
 
   <!-- Main Content -->
   <table class="homepage-main">
@@ -717,36 +715,45 @@
   </script>
 
   <script>
-    (() => {
-      const nav = document.querySelector('.site-nav');
-      const links = Array.from(nav.querySelectorAll('a'));
-      const sections = links.map(link => document.querySelector(link.getAttribute('href')));
-      let scheduled = false;
-      function updateNavigation() {
-        scheduled = false;
-        const offset = nav.getBoundingClientRect().bottom + 24;
-        let active = 0;
-        sections.forEach((section, index) => {
-          if (section && section.getBoundingClientRect().top <= offset) active = index;
-        });
-        if (window.scrollY > 0 && window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) active = links.length - 1;
-        links.forEach((link, index) => {
-          if (index === active) link.setAttribute('aria-current', 'location');
-          else link.removeAttribute('aria-current');
-        });
-      }
-      function scheduleUpdate() {
-        if (!scheduled) { scheduled = true; requestAnimationFrame(updateNavigation); }
-      }
-      function updateOffset() {
-        document.documentElement.style.scrollPaddingTop = (nav.offsetHeight + 34) + 'px';
-        scheduleUpdate();
-      }
-      window.addEventListener('scroll', scheduleUpdate, { passive: true });
-      window.addEventListener('resize', updateOffset);
-      window.addEventListener('load', updateOffset);
-      updateOffset();
-    })();
+  (() => {
+    const nav = document.querySelector('.site-nav');
+    const links = [...nav.querySelectorAll('a')];
+    const sections = links.map(link => document.querySelector(link.hash));
+    let pending = null, timer, frame;
+    const clearance = () => parseFloat(getComputedStyle(nav).top) + nav.offsetHeight + 20;
+    function select(index) {
+      links.forEach((link, i) => i === index ? link.setAttribute('aria-current', 'location') : link.removeAttribute('aria-current'));
+    }
+    function update() {
+      frame = null;
+      if (pending !== null) return;
+      let index = 0;
+      sections.forEach((section, i) => { if (section.getBoundingClientRect().top <= clearance() + 3) index = i; });
+      if (window.scrollY > 0 && window.scrollY + innerHeight >= document.documentElement.scrollHeight - 3) index = links.length - 1;
+      select(index);
+    }
+    function finish() { pending = null; update(); }
+    links.forEach((link, i) => link.addEventListener('click', event => {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      pending = i;
+      select(i);
+      history.pushState(null, '', link.hash);
+      const target = Math.max(0, sections[i].getBoundingClientRect().top + window.scrollY - clearance());
+      window.scrollTo({ top:target, behavior:matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+      clearTimeout(timer); timer = setTimeout(finish, 1200);
+    }));
+    window.addEventListener('scroll', () => {
+      if (pending !== null) { clearTimeout(timer); timer = setTimeout(finish, 180); }
+      else if (!frame) frame = requestAnimationFrame(update);
+    }, { passive:true });
+    function cancelPending() { clearTimeout(timer); pending = null; }
+    window.addEventListener('wheel', cancelPending, { passive:true });
+    window.addEventListener('touchstart', cancelPending, { passive:true });
+    window.addEventListener('resize', update);
+    window.addEventListener('load', update);
+    update();
+  })();
   </script>
 </body>
 </html>
