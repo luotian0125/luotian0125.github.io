@@ -202,6 +202,14 @@
     .site-nav a:focus-visible { outline:2px solid #bd8e18; outline-offset:2px; }
     @media(max-width:480px) { .site-nav { top:6px; padding:5px; border-radius:14px; } .site-nav a { padding:8px 10px; font-size:12px; } }
     @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .site-nav a { transition:none; } }
+    /* Give the email its own row; keep profile links compact below it. */
+    .contact-links { gap:8px 10px; margin-top:16px; }
+    .contact-links .contact-separator { display:none; }
+    .contact-links #email-copy { flex:0 0 100%; box-sizing:border-box; white-space:normal; overflow-wrap:anywhere; padding:6px 0; }
+    .contact-links #email-copy svg { flex-shrink:0; }
+    .contact-links a:not(#email-copy) { padding:7px 10px; border:1px solid #ecdfb5; border-radius:9px; background:#fffdf5; text-decoration:none; }
+    .contact-links a:not(#email-copy):hover { background:#fff3cc; border-color:#d6b952; }
+    .contact-links a:focus-visible { outline:2px solid #bd8e18; outline-offset:3px; }
 </style>
 </head>
 
@@ -256,6 +264,13 @@
                     </a>,
                     advised by Assistant Professor <strong>Kun Li</strong>.
                   </p>
+                    <p>
+                      Currently, I am keeping abreast of recent advances in <strong>LLM reasoning</strong>,
+                      <strong>generative AI</strong>, and other cutting-edge fields.
+                      I look forward to exploring potential research collaborations and pursuing
+                      <strong>PhD opportunities</strong>.
+                      Please feel free to <a href="mailto:luotian0125@gmail.com">contact me</a>.
+                    </p>
 
                   <div style="width:100%; height:1px; background:linear-gradient(to right, transparent, #ccc 20%, #ccc 80%, transparent); margin:10px 0;"></div>
 
@@ -305,7 +320,7 @@
                       <span>CV</span>
                     </a>
                     <span class="contact-separator">|</span>
-                    <a href="https://www.linkedin.com/in/reitl-undefined-782781425/"
+                    <a href="https://www.linkedin.com/in/tian-luo-782781425/"
                        target="_blank" rel="noopener noreferrer" title="LinkedIn profile">
                       <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="3" y="3" width="18" height="18" rx="2"/>
