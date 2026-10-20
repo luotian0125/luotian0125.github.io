@@ -229,6 +229,25 @@
     .publication-details > p:last-child { margin-bottom:0; font-size:13px; }
     .publication-details em { font-size:12px; color:#756347; }
     @media(max-width:600px) { .publication-card { grid-template-columns:1fr; padding:18px; gap:16px; } .publication-visual img { max-width:260px; } .publication-filters { gap:7px; } .publication-filters button { padding:8px 11px; } }
+    /* News: a restrained gold timeline with consistent emphasis. */
+    #news .news-list { margin:18px 0 10px; padding:0; list-style:none; }
+    #news .news-entry { position:relative; display:grid; grid-template-columns:112px minmax(0,1fr); gap:18px; margin:0; padding:14px 10px 20px 22px; border:0; background:transparent; border-radius:10px; font-family:inherit; transition:background .22s ease, box-shadow .22s ease; }
+    #news .news-entry::before { content:""; position:absolute; left:4px; top:24px; bottom:-24px; width:1px; background:#eadfbe; }
+    #news .news-entry:last-child::before { display:none; }
+    #news .news-entry::after { content:""; position:absolute; left:0; top:20px; width:9px; height:9px; box-sizing:border-box; border:2px solid #c39b40; border-radius:50%; background:#fffaf0; transition:box-shadow .22s ease, background .22s ease; }
+    #news .news-date-badge { display:inline-flex; align-items:center; justify-content:center; align-self:start; box-sizing:border-box; margin:0; padding:4px 7px; border:0; border-radius:6px; background:#faf4e5; color:#806737; font-family:inherit; font-size:11px; font-weight:500; font-style:normal; line-height:1.6; letter-spacing:.01em; white-space:nowrap; box-shadow:none; text-decoration:none; font-variant-numeric:tabular-nums; }
+    #news .news-copy { color:#383b40; font-family:inherit; font-size:14px; line-height:1.85; }
+    #news .news-copy strong { color:#8c681f; font-weight:600; font-style:normal; text-decoration:none; border:0; background:none; }
+    @media(hover:hover) { #news .news-entry:hover { background:#fffcf4; box-shadow:0 3px 15px rgba(132,102,35,.04); } #news .news-entry:hover::after { background:#c39b40; box-shadow:0 0 0 4px rgba(195,155,64,.13); } }
+    @media(max-width:520px) { #news .news-entry { grid-template-columns:minmax(0,1fr); gap:8px; padding-right:6px; } #news .news-date-badge { justify-self:start; } }
+    @media(prefers-reduced-motion:reduce) { #news .news-entry, #news .news-entry::after { transition:none; } }
+    /* Publication cards: subtle depth and warm highlights. */
+    .publication-card { transition:transform .24s ease, box-shadow .24s ease, border-color .24s ease; }
+    .publication-card:focus-within { border-color:#d2b365; box-shadow:0 8px 24px rgba(150,112,46,.10); }
+    @media(hover:hover) and (pointer:fine) {
+      .publication-card:hover { transform:translateY(-4px); border-color:#d2b365; box-shadow:0 10px 28px rgba(150,112,46,.12), 0 2px 6px rgba(150,112,46,.04); }
+    }
+    @media(prefers-reduced-motion:reduce) { .publication-card { transition:none; } .publication-card:hover { transform:none; } }
 </style>
 </head>
 
@@ -365,43 +384,22 @@
 
           <!-- News -->
           <section id="news" class="page-section" style="padding:10px 2.5%;">
-            <heading>News</heading>
-
-            <ul class="news-list">
-
-              <li class="news-entry">
-                <span class="news-date-badge">Sep. 25, 2026</span>
-                Our paper <span class="news-highlight">AtomWorld-Mem</span>
-                was accepted to <strong><em>NeurIPS 2026</em></strong>!
-                It is my first research paper and was accepted on my first submission.
-                Special thanks to <strong><em>Kun</em></strong>,
-                who introduced me to research and has had a profound influence on my journey.
-              </li>
-
-              <li class="news-entry">
-                <span class="news-date-badge">Sep. 20, 2026</span>
-                I received the
-                <strong><em><span class="news-highlight">National Scholarship</span></em></strong>
-                for the second consecutive year!
-                I am grateful for my hard work and for the support of my family, friends,
-                teachers, and everyone who has helped me grow.
-              </li>
-
-              <li class="news-entry">
-                <span class="news-date-badge">Sep. 28, 2025</span>
-                I received the
-                <strong>
-                  <em>
-                    <span class="news-highlight">
-                      National Scholarship and Comprehensive First-Class Scholarship of Sichuan University
-                    </span>
-                  </em>
-                </strong>
-                as the sole recipient in my major.
-              </li>
-
-            </ul>
-          </section>
+  <heading>News</heading>
+  <ul class="news-list">
+    <li class="news-entry">
+      <time class="news-date-badge" datetime="2026-09-25">Sep. 25, 2026</time>
+      <div class="news-copy">Our paper <strong>AtomWorld-Mem</strong> was accepted to <strong>NeurIPS 2026</strong>! It is my first research paper and was accepted on my first submission. Special thanks to <strong>Kun</strong>, who introduced me to research and has had a profound influence on my journey.</div>
+    </li>
+    <li class="news-entry">
+      <time class="news-date-badge" datetime="2026-09-20">Sep. 20, 2026</time>
+      <div class="news-copy">I received the <strong>National Scholarship</strong> for the second consecutive year! I am grateful for my hard work and for the support of my family, friends, teachers, and everyone who has helped me grow.</div>
+    </li>
+    <li class="news-entry">
+      <time class="news-date-badge" datetime="2025-09-28">Sep. 28, 2025</time>
+      <div class="news-copy">I received the <strong>National Scholarship and Comprehensive First-Class Scholarship of Sichuan University</strong> as the sole recipient in my major.</div>
+    </li>
+  </ul>
+</section>
 
 
 
