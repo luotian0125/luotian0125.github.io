@@ -205,11 +205,30 @@
     /* Give the email its own row; keep profile links compact below it. */
     .contact-links { gap:8px 10px; margin-top:16px; }
     .contact-links .contact-separator { display:none; }
-    .contact-links #email-copy { flex:0 0 100%; box-sizing:border-box; white-space:normal; overflow-wrap:anywhere; padding:6px 0; }
+    .contact-links #email-copy { order:2; flex:0 0 100%; box-sizing:border-box; white-space:normal; overflow-wrap:anywhere; padding:6px 0; }
     .contact-links #email-copy svg { flex-shrink:0; }
     .contact-links a:not(#email-copy) { padding:7px 10px; border:1px solid #ecdfb5; border-radius:9px; background:#fffdf5; text-decoration:none; }
     .contact-links a:not(#email-copy):hover { background:#fff3cc; border-color:#d6b952; }
     .contact-links a:focus-visible { outline:2px solid #bd8e18; outline-offset:3px; }
+    .publication-legend { margin:10px 0 16px; color:#736b5b; font-size:12px; line-height:1.6; }
+    .publication-filters { display:flex; flex-wrap:wrap; gap:9px; margin:0 0 20px; }
+    .publication-filters button { display:inline-flex; align-items:center; gap:8px; padding:8px 14px; border:1px solid #e5dcc7; border-radius:999px; background:#fffdf7; color:#726044; font:inherit; font-size:12px; cursor:pointer; }
+    .publication-filters button:hover { background:#fff1c6; }
+    .publication-filters button[aria-pressed="true"] { background:#96702e; border-color:#96702e; color:#fff; box-shadow:0 2px 6px #96702e24; }
+    .filter-count { padding:1px 6px; border-radius:999px; background:rgba(150,112,46,.10); font-size:11px; }
+    [aria-pressed="true"] .filter-count { background:rgba(255,255,255,.22); }
+    .publication-filters button:focus-visible { outline:2px solid #bd8e18; outline-offset:3px; }
+    .publication-cards { display:grid; gap:18px; }
+    .publication-card { display:grid; grid-template-columns:minmax(0,190px) minmax(0,1fr); align-items:center; gap:22px; padding:22px; border:1px solid #e7e1d5; border-radius:14px; background:#fff; box-shadow:0 3px 14px rgba(80,64,26,.035); }
+    .publication-card[hidden] { display:none; }
+    .publication-visual { min-width:0; }
+    .publication-visual img { display:block; width:100%; max-width:190px; height:auto; margin:auto; border-radius:6px; }
+    .publication-details { min-width:0; line-height:1.6; overflow-wrap:anywhere; }
+    .publication-details papertitle { display:block; font-weight:600; font-size:15px; line-height:1.45; color:#997022; }
+    .publication-details .paper-authors { font-size:13px; margin:9px 0; }
+    .publication-details > p:last-child { margin-bottom:0; font-size:13px; }
+    .publication-details em { font-size:12px; color:#756347; }
+    @media(max-width:600px) { .publication-card { grid-template-columns:1fr; padding:18px; gap:16px; } .publication-visual img { max-width:260px; } .publication-filters { gap:7px; } .publication-filters button { padding:8px 11px; } }
 </style>
 </head>
 
@@ -390,20 +409,18 @@
 
           <!-- Publications -->
           <section id="publications" class="page-section" style="padding:10px 2.5%;">
-            <heading>Publications</heading>
-          
-            <table class="publications-table" style="width:100%; border-spacing:0 16px;">
-              <tbody>
-          
-                <!-- Publication 1: AtomWorld-Mem -->
-                <tr class="publication-row" data-tags="ai4science,world-model">
-                  <td style="padding:20px; width:30%; vertical-align:middle;">
+  <heading>Publications</heading>
+  <p class="publication-legend">† Equal contribution. ‡ Corresponding author.</p>
+  <div class="publication-filters" role="group" aria-label="Filter publications">
+    <button type="button" data-category="all" aria-pressed="true">ALL <span class="filter-count">2</span></button>
+    <button type="button" data-category="ai4s" aria-pressed="false">AI4S <span class="filter-count">2</span></button>
+    <button type="button" data-category="physical-intelligence" aria-pressed="false">Physical Intelligence <span class="filter-count">2</span></button>
+  </div>
+  <div class="publication-cards"><article class="publication-card" data-categories="ai4s physical-intelligence"><div class="publication-visual">
                     <img class="publication-image"
                          src="images/experience/AtomWorld-Mem.png"
                          alt="AtomWorld-Mem project illustration">
-                  </td>
-          
-                  <td style="padding:20px; width:70%; vertical-align:middle;">
+                  </div><div class="publication-details">
                     <a href="https://luotian0125.github.io/AtomWorld-Mem/"
                        target="_blank"
                        rel="noopener noreferrer"
@@ -424,7 +441,7 @@
                       Kun Li<sup>‡</sup>
                     </p>
           
-                    <p class="paper-notes">† Equal contribution. ‡ Corresponding author.</p>
+                    
           
                     <em><strong>NeurIPS 2026</strong></em>
           
@@ -433,18 +450,12 @@
                       instantaneous crystal snapshots, enabling physically grounded and
                       transferable long-horizon atomistic evolution.
                     </p>
-                  </td>
-                </tr>
-          
-                <!-- Publication 2: AtomWorld -->
-                <tr class="publication-row" data-tags="ai4science,world-model">
-                  <td style="padding:20px; width:30%; vertical-align:middle;">
+                  </div></article>
+<article class="publication-card" data-categories="ai4s physical-intelligence"><div class="publication-visual">
                     <img class="publication-image"
                          src="images/experience/AtomWorld.png"
                          alt="AtomWorld project illustration">
-                  </td>
-          
-                  <td style="padding:20px; width:70%; vertical-align:middle;">
+                  </div><div class="publication-details">
                     <papertitle>
                       From atomic events to material degradation across metre and year scales
                     </papertitle>
@@ -461,19 +472,15 @@
                       Yunxin Liu
                     </p>
           
-                    <p class="paper-notes">† Equal contribution. ‡ Corresponding author.</p>
+                    
           
                     <em><strong>Preprint</strong></em>
           
                     <p>
                       Understanding material degradation over engineering timescales remains a fundamental challenge. We introduce AtomWorld, a physics-grounded atomistic world model that restores hidden kinetic context to bridge atomic events and material degradation across metre and year scales.
                     </p>
-                  </td>
-                </tr>
-          
-              </tbody>
-            </table>
-          </section>
+                  </div></article>
+</div></section>
 
 
           <!-- Education -->
@@ -780,5 +787,19 @@
     update();
   })();
   </script>
+<script>
+(() => {
+  const buttons = [...document.querySelectorAll('.publication-filters button')];
+  const cards = [...document.querySelectorAll('.publication-card')];
+  const matches = (card, category) => category === 'all' || card.dataset.categories.split(' ').includes(category);
+  buttons.forEach(button => {
+    button.querySelector('.filter-count').textContent = cards.filter(card => matches(card, button.dataset.category)).length;
+    button.addEventListener('click', () => {
+      buttons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+      cards.forEach(card => { card.hidden = !matches(card, button.dataset.category); });
+    });
+  });
+})();
+</script>
 </body>
 </html>
