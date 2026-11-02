@@ -357,23 +357,27 @@ a:focus-visible, button:focus-visible, summary:focus-visible,
 .mountain-content h2, .mountain-content .mountain-sub, .mountain-footnote, .mountain-updated { color: #fff; }
 
 
-/* Education and experience: consistent type hierarchy. */
-.affiliation { display:grid; grid-template-columns:100px minmax(0,1fr); gap:26px; align-items:center; margin:22px 0 28px; padding:0 12px; }
-.affiliation .experience-logo { display:block; width:100px; height:86px; object-fit:contain; }
-.affiliation-copy { min-width:0; }
-.affiliation-title { margin:0 0 5px; font-size:15px; font-weight:700; line-height:1.45; }
-.affiliation-title a { color:#252b35; font-size:inherit; font-weight:inherit; text-decoration:none; }
-.affiliation-title a:hover { color:#252b35; text-decoration:underline; text-decoration-color:#aeb5c0; text-underline-offset:3px; }
-.affiliation-date { display:block; margin:0 0 9px; color:#717987; font-size:12px; line-height:1.5; font-variant-numeric:tabular-nums; }
-.affiliation-role { margin:0 0 3px; color:#39414e; font-size:13px; font-weight:600; line-height:1.6; }
-.affiliation-description { margin:0; color:#586273; font-size:13px; line-height:1.6; }
-.affiliation-description strong { color:inherit; font-size:inherit; font-weight:600; }
+/* Education and experience: compact, typographic resume rows. */
+#education, #experience { font-family:"Segoe UI",Helvetica,Arial,sans-serif; }
+#education heading, #experience heading { display:block; font-family:inherit; font-size:23px; font-weight:600; letter-spacing:-.025em; color:#20242b; text-decoration:none; line-height:1.3; }
+.affiliation { display:grid; grid-template-columns:76px minmax(0,1fr); gap:22px; align-items:center; margin:18px 0 22px; padding:0; }
+.affiliation .experience-logo { display:block; width:76px; height:68px; object-fit:contain; }
+.affiliation-copy { min-width:0; display:grid; grid-template-columns:minmax(0,1fr) auto; grid-template-areas:"title title" "role date" "description description"; column-gap:12px; row-gap:4px; }
+.affiliation-copy h3, .affiliation-copy p, .affiliation-copy span, .affiliation-copy a, .affiliation-copy strong { font-family:"Segoe UI",Helvetica,Arial,sans-serif; }
+.affiliation-title { grid-area:title; margin:0 0 2px; font-size:15px; font-weight:600; line-height:1.4; letter-spacing:-.015em; }
+.affiliation-title a { color:#24282f; font-size:inherit; font-weight:inherit; text-decoration:none; }
+.affiliation-title a:hover { color:#24282f; text-decoration:underline; text-decoration-color:#adb3bc; text-underline-offset:3px; }
+.affiliation-date { grid-area:date; align-self:baseline; margin:0; color:#727984; font-size:12px; font-weight:400; line-height:1.6; white-space:nowrap; font-variant-numeric:tabular-nums; }
+.affiliation-role { grid-area:role; margin:0; color:#39414b; font-size:13px; font-weight:400; line-height:1.6; }
+.affiliation-description { grid-area:description; margin:0; color:#626a75; font-size:13px; font-weight:400; line-height:1.55; }
+.affiliation-description strong { color:#424a55; font-size:inherit; font-weight:500; }
 @media(max-width:520px) {
-  .affiliation { grid-template-columns:64px minmax(0,1fr); gap:16px; padding:0; align-items:start; }
-  .affiliation .experience-logo { width:64px; height:64px; }
+  .affiliation { grid-template-columns:52px minmax(0,1fr); gap:14px; align-items:start; }
+  .affiliation .experience-logo { width:52px; height:52px; }
+  .affiliation-copy { grid-template-columns:minmax(0,1fr); grid-template-areas:"title" "role" "date" "description"; row-gap:3px; }
   .affiliation-title { font-size:14px; }
+  .affiliation-date { font-size:11px; white-space:normal; }
 }
-
 </style>
 </head>
 
