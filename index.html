@@ -281,8 +281,7 @@
     .publication-meta .paper-category { display:inline-block; padding:3px 8px; border:1px solid #eadfc5; border-radius:999px; background:#faf6ec; color:#8a713c; font-family:inherit; font-size:10px; font-weight:500; font-style:normal; line-height:1.5; letter-spacing:.01em; }
     .publication-meta .paper-category { background:#edf3f8; border-color:#dce6ef; color:#526e87; font-weight:500; }
     .publication-meta .paper-category:last-child { background:#f1eef7; border-color:#e4deef; color:#77648b; }
-/* Graphite / ice / indigo: a single restrained color system. */
-:root {
+/* Graphite / ice / indigo: a single restrained color system. */:root {
   --page: #f8fafc;
   --surface: #ffffff;
   --ink: #202632;
@@ -351,6 +350,32 @@ a:focus-visible, button:focus-visible, summary:focus-visible,
 .mountain-cta { color: var(--ink); background: #fff; border-color: #fff; animation: none; }
 .mountain-cta:hover { color: var(--accent); }
 .mountain-content h2, .mountain-content .mountain-sub, .mountain-footnote, .mountain-updated { color: #fff; }
+
+
+/* Requested changes only: venue styling, tag palette, institution title color. */
+.publication-meta > em,
+.publication-meta > em strong {
+  color: #9b343b;
+  font-style: italic;
+}
+.publication-meta .paper-category {
+  background: #eef3f7;
+  border-color: #dce5ec;
+  color: #4f6578;
+}
+.publication-meta .paper-category:last-child {
+  background: #f2eff5;
+  border-color: #e5dfec;
+  color: #6b5b7b;
+}
+#education .experience-row strong > a,
+#experience .experience-row strong > a,
+#education .experience-row strong > a:hover,
+#experience .experience-row strong > a:hover,
+#education .experience-row strong > a:focus,
+#experience .experience-row strong > a:focus {
+  color: #000000;
+}
 
 </style>
 </head>
