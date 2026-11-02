@@ -283,7 +283,7 @@
     .publication-meta .paper-category:last-child { background:#f1eef7; border-color:#e4deef; color:#77648b; }
 /* Graphite / ice / indigo: a single restrained color system. */
 :root {
-  --page: #f8fafc;
+  --page: #ffffff;
   --surface: #ffffff;
   --ink: #202632;
   --secondary: #586273;
@@ -306,7 +306,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible,
 .publication-filters button:focus-visible, #news .news-archive summary:focus-visible {
   outline: 2px solid var(--accent); outline-offset: 3px;
 }
-.site-nav { background: rgba(248,250,252,.94); border-color: var(--line); box-shadow: 0 4px 18px rgba(25,33,54,.04); }
+.site-nav { background: rgba(255,255,255,.94); border-color: var(--line); box-shadow: 0 4px 18px rgba(25,33,54,.04); }
 .site-nav a { color: var(--secondary); }
 .site-nav a:hover { background: #edf0f5; color: var(--ink); }
 .site-nav a[aria-current="location"] { background: var(--ink); color: #fff; }
@@ -324,7 +324,9 @@ a:focus-visible, button:focus-visible, summary:focus-visible,
 .publication-card { background: var(--surface); border-color: var(--line); box-shadow: 0 3px 14px rgba(25,33,54,.025); }
 .publication-details papertitle { color: var(--ink); }
 .publication-details a:hover papertitle { color: var(--accent); }
-.publication-details em, .publication-meta > em, .publication-meta > em strong { color: var(--accent); }
+.publication-details em { color: var(--secondary); }
+.publication-meta > em { display:inline-flex; align-items:center; padding:4px 9px; border:1px solid #d6dae1; border-radius:5px; background:#f0f2f5; color:#202632; font-size:13px; font-weight:700; font-style:normal; line-height:1.4; }
+.publication-meta > em strong { color:inherit; font-size:inherit; font-weight:700; font-style:normal; }
 .publication-meta .paper-category { background: var(--accent-soft); color: #4c528a; border-color: #dfe2f4; }
 .publication-meta .paper-category:last-child { background: #f1f3f7; color: var(--secondary); border-color: var(--line); }
 .publication-card:focus-within { border-color: var(--accent-line); box-shadow: 0 8px 24px rgba(25,33,54,.07); }
@@ -347,7 +349,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible,
 .toast-message { color: var(--ink); background: var(--surface); box-shadow: 0 4px 20px rgba(25,33,54,.13); }
 #backToTop { background: #252c3b; color: #fff; box-shadow: 0 4px 14px rgba(25,33,54,.16); }
 #backToTop:hover { background: var(--accent); }
-.mountain-stage::before { background: linear-gradient(to bottom,#f8fafc 0%,rgba(248,250,252,.92) 8%,rgba(248,250,252,.72) 22%,rgba(248,250,252,.42) 42%,rgba(248,250,252,.18) 65%,transparent 100%); }
+.mountain-stage::before { background: linear-gradient(to bottom,#ffffff 0%,rgba(255,255,255,.92) 8%,rgba(255,255,255,.72) 22%,rgba(255,255,255,.42) 42%,rgba(255,255,255,.18) 65%,transparent 100%); }
 .mountain-cta { color: var(--ink); background: #fff; border-color: #fff; animation: none; }
 .mountain-cta:hover { color: var(--accent); }
 .mountain-content h2, .mountain-content .mountain-sub, .mountain-footnote, .mountain-updated { color: #fff; }
@@ -909,3 +911,4 @@ a:focus-visible, button:focus-visible, summary:focus-visible,
 </script>
 </body>
 </html>
+
