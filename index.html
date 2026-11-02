@@ -377,6 +377,16 @@ a:focus-visible, button:focus-visible, summary:focus-visible,
   color: #000000;
 }
 
+
+/* Slightly larger institution names; right-aligned award years. */
+#education .experience-row strong > a,
+#experience .experience-row strong > a { font-size:16px; line-height:1.45; }
+#awards .awards-list li { padding-right:0; }
+#awards .award-row { display:flex; align-items:baseline; justify-content:space-between; gap:20px; }
+#awards .award-name { min-width:0; }
+#awards .award-year { flex-shrink:0; white-space:nowrap; text-align:right; font-variant-numeric:tabular-nums; }
+@media(max-width:480px) { #awards .award-row { gap:12px; } }
+
 </style>
 </head>
 
@@ -699,8 +709,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible,
             <heading>Awards and Honors</heading>
 
             <ul class="awards-list">
-              <li>2025, 2026 — National Scholarship</li>
-              <li>2025 — Comprehensive First-Class Scholarship, Sichuan University</li>
+              <li><div class="award-row"><span class="award-name">National Scholarship</span><span class="award-year">2025, 2026</span></div></li>
+              <li><div class="award-row"><span class="award-name">Comprehensive First-Class Scholarship, Sichuan University</span><span class="award-year">2025</span></div></li>
             </ul>
           </section>
 
