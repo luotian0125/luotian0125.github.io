@@ -283,7 +283,7 @@
     .publication-meta .paper-category:last-child { background:#f1eef7; border-color:#e4deef; color:#77648b; }
 /* Graphite / ice / indigo: a single restrained color system. */
 :root {
-  --page: #ffffff;
+  --page: #f8fafc;
   --surface: #ffffff;
   --ink: #202632;
   --secondary: #586273;
@@ -306,7 +306,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible,
 .publication-filters button:focus-visible, #news .news-archive summary:focus-visible {
   outline: 2px solid var(--accent); outline-offset: 3px;
 }
-.site-nav { background: rgba(255,255,255,.94); border-color: var(--line); box-shadow: 0 4px 18px rgba(25,33,54,.04); }
+.site-nav { background: rgba(248,250,252,.94); border-color: var(--line); box-shadow: 0 4px 18px rgba(25,33,54,.04); }
 .site-nav a { color: var(--secondary); }
 .site-nav a:hover { background: #edf0f5; color: var(--ink); }
 .site-nav a[aria-current="location"] { background: var(--ink); color: #fff; }
@@ -324,13 +324,9 @@ a:focus-visible, button:focus-visible, summary:focus-visible,
 .publication-card { background: var(--surface); border-color: var(--line); box-shadow: 0 3px 14px rgba(25,33,54,.025); }
 .publication-details papertitle { color: var(--ink); }
 .publication-details a:hover papertitle { color: var(--accent); }
-.publication-details em { color: var(--secondary); }
-.publication-meta { gap:6px 8px; }
-.publication-meta > em { display:inline-flex; align-items:center; margin:0; padding:0; border:0; border-radius:0; background:none; color:#9b343b; font-size:13px; font-weight:700; font-style:italic; line-height:1.5; }
-.publication-meta > em strong { color:inherit; font-size:inherit; font-weight:700; font-style:italic; }
-.publication-meta .paper-category { display:inline-flex; align-items:center; padding:3px 9px; margin:0; border:1px solid #dce5ec; border-radius:999px; background:#eef3f7; color:#4f6578; font-size:10px; font-weight:500; line-height:1.5; letter-spacing:.01em; }
-.publication-meta .paper-category:last-child { background:#f2eff5; border-color:#e5dfec; color:#6b5b7b; }
-.publication-meta .paper-category::before { content:none; }
+.publication-details em, .publication-meta > em, .publication-meta > em strong { color: var(--accent); }
+.publication-meta .paper-category { background: var(--accent-soft); color: #4c528a; border-color: #dfe2f4; }
+.publication-meta .paper-category:last-child { background: #f1f3f7; color: var(--secondary); border-color: var(--line); }
 .publication-card:focus-within { border-color: var(--accent-line); box-shadow: 0 8px 24px rgba(25,33,54,.07); }
 #news .news-list::before { background: none; }
 #news .news-copy { color: var(--ink); }
@@ -351,38 +347,11 @@ a:focus-visible, button:focus-visible, summary:focus-visible,
 .toast-message { color: var(--ink); background: var(--surface); box-shadow: 0 4px 20px rgba(25,33,54,.13); }
 #backToTop { background: #252c3b; color: #fff; box-shadow: 0 4px 14px rgba(25,33,54,.16); }
 #backToTop:hover { background: var(--accent); }
-.mountain-stage::before { background: linear-gradient(to bottom,#ffffff 0%,rgba(255,255,255,.92) 8%,rgba(255,255,255,.72) 22%,rgba(255,255,255,.42) 42%,rgba(255,255,255,.18) 65%,transparent 100%); }
+.mountain-stage::before { background: linear-gradient(to bottom,#f8fafc 0%,rgba(248,250,252,.92) 8%,rgba(248,250,252,.72) 22%,rgba(248,250,252,.42) 42%,rgba(248,250,252,.18) 65%,transparent 100%); }
 .mountain-cta { color: var(--ink); background: #fff; border-color: #fff; animation: none; }
 .mountain-cta:hover { color: var(--accent); }
 .mountain-content h2, .mountain-content .mountain-sub, .mountain-footnote, .mountain-updated { color: #fff; }
 
-
-/* A shared, compact resume style for education, experience and awards. */
-#education, #experience, #awards { font-family:Arial,Helvetica,sans-serif; margin:0 0 12px; }
-#education heading, #experience heading, #awards heading { display:block; margin:0 0 14px; padding:0 0 8px; border-bottom:1px solid #e5e7eb; font-family:Arial,Helvetica,sans-serif; font-size:22px; font-weight:600; letter-spacing:-.4px; color:#22252b; text-decoration:none; line-height:1.2; }
-.affiliation { display:grid; grid-template-columns:68px minmax(0,1fr); gap:18px; align-items:center; margin:0; padding:0 0 5px; }
-.affiliation .experience-logo { display:block; width:68px; height:64px; object-fit:contain; }
-.affiliation-copy { min-width:0; display:grid; grid-template-columns:minmax(0,1fr) auto; grid-template-areas:"title title" "role date" "description description"; column-gap:14px; row-gap:3px; }
-.affiliation-copy h3, .affiliation-copy p, .affiliation-copy span, .affiliation-copy a, .affiliation-copy strong { font-family:Arial,Helvetica,sans-serif; }
-.affiliation-title { grid-area:title; margin:0 0 2px; font-size:14px; font-weight:700; line-height:1.4; letter-spacing:0; }
-.affiliation-title a { color:#25282e; font-size:inherit; font-weight:inherit; text-decoration:none; }
-.affiliation-title a:hover { color:#25282e; text-decoration:underline; text-underline-offset:3px; }
-.affiliation-date { grid-area:date; align-self:baseline; margin:0; color:#737983; font-size:12px; font-weight:400; line-height:1.5; white-space:nowrap; font-variant-numeric:tabular-nums; }
-.affiliation-role { grid-area:role; margin:0; color:#454b54; font-size:13px; font-weight:400; line-height:1.5; }
-.affiliation-description { grid-area:description; margin:0; color:#606773; font-size:13px; font-weight:400; line-height:1.5; }
-.affiliation-description strong { color:#454b54; font-size:inherit; font-weight:400; }
-#awards .awards-list { list-style:none; padding:0; margin:0; }
-#awards .awards-list li { display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:baseline; gap:16px; margin:0; padding:6px 0; font-family:Arial,Helvetica,sans-serif; font-size:13px; line-height:1.5; color:#454b54; }
-#awards .award-name, #awards .award-name strong { font-family:Arial,Helvetica,sans-serif; font-size:13px; }
-#awards .award-name strong { font-weight:700; color:#25282e; }
-#awards .award-year { color:#737983; font-family:Arial,Helvetica,sans-serif; font-size:12px; font-weight:400; white-space:nowrap; text-align:right; font-variant-numeric:tabular-nums; }
-@media(max-width:520px) {
-  .affiliation { grid-template-columns:46px minmax(0,1fr); gap:12px; align-items:start; }
-  .affiliation .experience-logo { width:46px; height:48px; }
-  .affiliation-copy { grid-template-columns:minmax(0,1fr); grid-template-areas:"title" "role" "date" "description"; row-gap:3px; }
-  .affiliation-date { white-space:normal; }
-  #awards .awards-list li { gap:10px; }
-}
 </style>
 </head>
 
@@ -623,29 +592,67 @@ a:focus-visible, button:focus-visible, summary:focus-visible,
           <!-- Education -->
           <section id="education" class="page-section" style="padding:10px 2.5%;">
             <heading>Education</heading>
-            <article class="affiliation">
-              <img class="experience-logo" src="images/paper/scu.svg" alt="Sichuan University logo">
-              <div class="affiliation-copy">
-                <h3 class="affiliation-title"><a href="https://www.scu.edu.cn/" target="_blank" rel="noopener noreferrer">Sichuan University</a></h3>
-                <span class="affiliation-date">2024–2028 (Expected)</span>
-                <p class="affiliation-role">Undergraduate Student</p>
-                <p class="affiliation-description">Dual bachelor's degrees in Mathematics and Artificial Intelligence</p>
-              </div>
-            </article>
+          
+            <table style="width:100%; border-spacing:0;">
+              <tbody>
+                <tr class="experience-row">
+                  <td style="padding-left:20px; padding-right:20px; width:20%; vertical-align:middle;">
+                    <img class="experience-logo"
+                         src="images/paper/scu.svg"
+                         alt="Sichuan University logo">
+                  </td>
+          
+                  <td style="width:80%; vertical-align:middle;">
+                    <strong>
+                      <a href="https://www.scu.edu.cn/"
+                         target="_blank"
+                         rel="noopener noreferrer">
+                        Sichuan University
+                      </a>
+                    </strong>
+                    <br>
+                    2024–2028 (Expected)
+                    <br>
+                    <strong>Undergraduate Student</strong>
+                    <br>
+                    Dual bachelor's degrees in Mathematics and Artificial Intelligence
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </section>
           
           <!-- Experience -->
           <section id="experience" class="page-section" style="padding:10px 2.5%;">
             <heading>Experience</heading>
-            <article class="affiliation">
-              <img class="experience-logo" src="images/paper/air1.svg" alt="Tsinghua AIR logo">
-              <div class="affiliation-copy">
-                <h3 class="affiliation-title"><a href="https://air.tsinghua.edu.cn/" target="_blank" rel="noopener noreferrer">Institute for AI Industry Research (AIR), Tsinghua University</a></h3>
-                <span class="affiliation-date">Feb. 2026 – Oct. 2026</span>
-                <p class="affiliation-role">Research Intern</p>
-                <p class="affiliation-description">Research Advisor: Assistant Professor <strong>Kun Li</strong></p>
-              </div>
-            </article>
+          
+            <table style="width:100%; border-spacing:0;">
+              <tbody>
+                <tr class="experience-row">
+                  <td style="padding-left:20px; padding-right:20px; width:20%; vertical-align:middle;">
+                    <img class="experience-logo"
+                         src="images/paper/air1.svg"
+                         alt="Tsinghua AIR logo">
+                  </td>
+          
+                  <td style="width:80%; vertical-align:middle;">
+                    <strong>
+                      <a href="https://air.tsinghua.edu.cn/"
+                         target="_blank"
+                         rel="noopener noreferrer">
+                        Institute for AI Industry Research (AIR), Tsinghua University
+                      </a>
+                    </strong>
+                    <br>
+                    Feb. 2026 – Oct. 2026
+                    <br>
+                    <strong>Research Intern</strong>
+                    <br>
+                    Research Advisor: Assistant Professor <strong>Kun Li</strong>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </section>
 
 
@@ -667,8 +674,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible,
             <heading>Awards and Honors</heading>
 
             <ul class="awards-list">
-              <li><span class="award-name"><strong>National Scholarship</strong></span><span class="award-year">2025, 2026</span></li>
-              <li><span class="award-name"><strong>Comprehensive First-Class Scholarship</strong>, Sichuan University</span><span class="award-year">2025</span></li>
+              <li>2025, 2026 — National Scholarship</li>
+              <li>2025 — Comprehensive First-Class Scholarship, Sichuan University</li>
             </ul>
           </section>
 
@@ -902,7 +909,3 @@ a:focus-visible, button:focus-visible, summary:focus-visible,
 </script>
 </body>
 </html>
-
-
-
-
