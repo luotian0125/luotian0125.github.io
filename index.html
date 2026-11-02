@@ -356,6 +356,24 @@ a:focus-visible, button:focus-visible, summary:focus-visible,
 .mountain-cta:hover { color: var(--accent); }
 .mountain-content h2, .mountain-content .mountain-sub, .mountain-footnote, .mountain-updated { color: #fff; }
 
+
+/* Education and experience: consistent type hierarchy. */
+.affiliation { display:grid; grid-template-columns:100px minmax(0,1fr); gap:26px; align-items:center; margin:22px 0 28px; padding:0 12px; }
+.affiliation .experience-logo { display:block; width:100px; height:86px; object-fit:contain; }
+.affiliation-copy { min-width:0; }
+.affiliation-title { margin:0 0 5px; font-size:15px; font-weight:700; line-height:1.45; }
+.affiliation-title a { color:#252b35; font-size:inherit; font-weight:inherit; text-decoration:none; }
+.affiliation-title a:hover { color:#252b35; text-decoration:underline; text-decoration-color:#aeb5c0; text-underline-offset:3px; }
+.affiliation-date { display:block; margin:0 0 9px; color:#717987; font-size:12px; line-height:1.5; font-variant-numeric:tabular-nums; }
+.affiliation-role { margin:0 0 3px; color:#39414e; font-size:13px; font-weight:600; line-height:1.6; }
+.affiliation-description { margin:0; color:#586273; font-size:13px; line-height:1.6; }
+.affiliation-description strong { color:inherit; font-size:inherit; font-weight:600; }
+@media(max-width:520px) {
+  .affiliation { grid-template-columns:64px minmax(0,1fr); gap:16px; padding:0; align-items:start; }
+  .affiliation .experience-logo { width:64px; height:64px; }
+  .affiliation-title { font-size:14px; }
+}
+
 </style>
 </head>
 
@@ -596,67 +614,29 @@ a:focus-visible, button:focus-visible, summary:focus-visible,
           <!-- Education -->
           <section id="education" class="page-section" style="padding:10px 2.5%;">
             <heading>Education</heading>
-          
-            <table style="width:100%; border-spacing:0;">
-              <tbody>
-                <tr class="experience-row">
-                  <td style="padding-left:20px; padding-right:20px; width:20%; vertical-align:middle;">
-                    <img class="experience-logo"
-                         src="images/paper/scu.svg"
-                         alt="Sichuan University logo">
-                  </td>
-          
-                  <td style="width:80%; vertical-align:middle;">
-                    <strong>
-                      <a href="https://www.scu.edu.cn/"
-                         target="_blank"
-                         rel="noopener noreferrer">
-                        Sichuan University
-                      </a>
-                    </strong>
-                    <br>
-                    2024–2028 (Expected)
-                    <br>
-                    <strong>Undergraduate Student</strong>
-                    <br>
-                    Dual bachelor's degrees in Mathematics and Artificial Intelligence
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <article class="affiliation">
+              <img class="experience-logo" src="images/paper/scu.svg" alt="Sichuan University logo">
+              <div class="affiliation-copy">
+                <h3 class="affiliation-title"><a href="https://www.scu.edu.cn/" target="_blank" rel="noopener noreferrer">Sichuan University</a></h3>
+                <span class="affiliation-date">2024–2028 (Expected)</span>
+                <p class="affiliation-role">Undergraduate Student</p>
+                <p class="affiliation-description">Dual bachelor's degrees in Mathematics and Artificial Intelligence</p>
+              </div>
+            </article>
           </section>
           
           <!-- Experience -->
           <section id="experience" class="page-section" style="padding:10px 2.5%;">
             <heading>Experience</heading>
-          
-            <table style="width:100%; border-spacing:0;">
-              <tbody>
-                <tr class="experience-row">
-                  <td style="padding-left:20px; padding-right:20px; width:20%; vertical-align:middle;">
-                    <img class="experience-logo"
-                         src="images/paper/air1.svg"
-                         alt="Tsinghua AIR logo">
-                  </td>
-          
-                  <td style="width:80%; vertical-align:middle;">
-                    <strong>
-                      <a href="https://air.tsinghua.edu.cn/"
-                         target="_blank"
-                         rel="noopener noreferrer">
-                        Institute for AI Industry Research (AIR), Tsinghua University
-                      </a>
-                    </strong>
-                    <br>
-                    Feb. 2026 – Oct. 2026
-                    <br>
-                    <strong>Research Intern</strong>
-                    <br>
-                    Research Advisor: Assistant Professor <strong>Kun Li</strong>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <article class="affiliation">
+              <img class="experience-logo" src="images/paper/air1.svg" alt="Tsinghua AIR logo">
+              <div class="affiliation-copy">
+                <h3 class="affiliation-title"><a href="https://air.tsinghua.edu.cn/" target="_blank" rel="noopener noreferrer">Institute for AI Industry Research (AIR), Tsinghua University</a></h3>
+                <span class="affiliation-date">Feb. 2026 – Oct. 2026</span>
+                <p class="affiliation-role">Research Intern</p>
+                <p class="affiliation-description">Research Advisor: Assistant Professor <strong>Kun Li</strong></p>
+              </div>
+            </article>
           </section>
 
 
